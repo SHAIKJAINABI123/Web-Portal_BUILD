@@ -1,0 +1,213 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3rem;
+  /*========== Colors ==========*/
+  --hue: 45;
+  --sat: 98%;
+  --first-color: hsl(var(--hue), var(--sat), 60%);
+  --first-color-light: hsl(var(--hue), var(--sat), 85%);
+  --first-color-lighten: hsl(var(--hue), var(--sat), 80%);
+  --first-color-alt: hsl(var(--hue), var(--sat), 53%);
+  --title-color: hsl(var(--hue), 4%, 15%);
+  --text-color: hsl(var(--hue), 4%, 35%);
+  --text-color-light: hsl(var(--hue), 4%, 65%);
+  --body-color: hsl(var(--hue), 0%, 100%);
+  --container-color: #FFF;
+  --scroll-bar-color: hsl(var(--hue), 4%, 85%);
+  --scroll-thumb-color: hsl(var(--hue), 4%, 75%);
+  /*========== Font and typography ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --biggest-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  /*========== Font weight ==========*/
+  --font-semi-bold: 600;
+  --font-bold: 700;
+  /*========== Margenes ==========*/
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* @media screen and (min-width: 968px) {
+  :root {
+    --biggest-font-size: 3rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+} */
+
+/*=============== BASE ===============*/
+/* *, ::before, ::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: .5s;
+} */
+
+/* h1, h2, h3 {
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  line-height: 1.5;
+} */
+
+ul {
+  list-style: none;
+  margin-bottom:0rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navimg {
+  max-width: 100%;
+  height: auto;
+}
+/*=============== LAYOUT ===============*/
+.navcontainer {
+    max-width: 968px;
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+    
+
+  }
+  
+  
+  /*=============== HEADER ===============*/
+  .header {
+    width: 100%;
+    background-color: var(--body-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    transition: .5s;
+  }
+  
+  /*=============== NAV ===============*/
+  .nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .nav__menu {
+      position: fixed;
+      background-color: var(--container-color);
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+      padding: 2.5rem 0;
+      width: 90%;
+      top: -100%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      transition: .4s;
+      border-radius: 2rem;
+      z-index: var(--z-fixed);
+    }
+  }
+  
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+  }
+  
+  .nav__link, .nav__logo, .nav__toggle {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+  }
+  
+  .nav__toggle {
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+  
+  /* Show menu */
+  .show-menu {
+    top: calc(var(--header-height) + 1rem);
+  }
+  
+  .navlogo{
+    /* height: 130px; */
+    width: 130px;
+  }
+  .navbutton {
+    display: inline-block;
+    background-color: var(--first-color);
+    color: #1A1A1A;
+    padding: .75rem 1.5rem;
+    border-radius: 3rem;
+    font-weight: var(--font-semi-bold);
+    transition: .3s;
+  }
+  ::-webkit-scrollbar {
+    width: .6rem;
+    border-radius: .5rem;
+    background-color: var(--scroll-bar-color);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb-color);
+    border-radius: .5rem;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-color-light);
+  }
+  @media screen and (min-width: 1024px) {
+    .nav {
+      height: calc(var(--header-height) + 2rem);
+    }
+    .nav__list {
+      flex-direction: row;
+      column-gap: 2.5rem;
+      position: relative;
+      left: 0px;
+    }
+    .navcontainer {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .home__img {
+      width: 540px;
+    }
+    .home__description {
+      padding-right: 5rem;
+    }
+    .footer__container {
+      column-gap: 3rem;
+    }
+    .scrollup {
+      right: 2rem;
+    }
+  } 
